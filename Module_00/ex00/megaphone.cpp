@@ -6,20 +6,28 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 20:39:24 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/01 20:50:55 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/10/06 15:16:57 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 
-int	main(int argc, char **argv){
+int	main(int argc, char **argv) {
+	std::string	no_input = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else if (argc > 2)
-		std::cout << "This Meghaphone can't amplified multiple audio stream at once" << std::endl;
+		std::cout << no_input << std::endl;
 	else
-		std::cout << "todo" << std::endl;
-	(void)argv;
+	{
+		std::size_t i=0;
+		std::string	input;
+		while (argv[++i])
+			input += argv[i];
+		std::size_t	len = input.size();
+		std::string	output;
+		for (i=0; i < len; i++)
+				output.push_back(toupper(input.operator[](i)));
+		std::cout << output << std::endl;
+	}
 	return (0);
 }
