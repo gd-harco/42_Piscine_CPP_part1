@@ -11,31 +11,28 @@
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include "header.h"
+
+Contact::Contact()
+{
+	this->_first_name = "";
+	this->_last_name = "";
+	this->_nick_name = "";
+	this->_number = "";
+	this->_secret = "";
+}
 
 void	Contact::intialise()
 {
-	std::cout << "First Name:" << std::endl;
-	std::cin >> this->first_name;
-	std::cout << "Last Name:" << std::endl;
-	std::cin >> this->last_name;
-	std::cout << "Nick Name:" << std::endl;
-	std::cin >> this->nick_name;
-	std::cout << "Phone Number:" << std::endl;
-	std::cin >> this->number;
-	std::cout << "Darkest secret:" << std::endl;
-	std::cin >> this->secret;
+	inputWithPrompt(this->_first_name, "First Name:");
+	inputWithPrompt(this->_last_name, "Last Name:");
+	inputWithPrompt(this->_nick_name, "Nickname:");
+	inputWithPrompt(this->_number, "Number:");
+	inputWithPrompt(this->_secret, "Darkest Secret:");
+	std::cout << this;
 }
 
-void	Contact::print()
+std::string	Contact::get_name()
 {
-	std::cout << "First Name:" << std::endl;
-	std::cout << this->first_name << std::endl;
-	std::cout << "Last Name:" << std::endl;
-	std::cout << this->last_name << std::endl;
-	std::cout << "Nick Name:" << std::endl;
-	std::cout << this->nick_name << std::endl;
-	std::cout << "Phone Number:" << std::endl;
-	std::cout << this->number << std::endl;
-	std::cout << "Darkest secret:" << std::endl;
-	std::cout << this->secret << std::endl;
+	return (this->_first_name);
 }

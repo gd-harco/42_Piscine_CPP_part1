@@ -17,15 +17,13 @@ PhoneBook::PhoneBook(){
 	this->oldest = -1;
 }
 
-void	PhoneBook::create_contact()
-{
+void	PhoneBook::create_contact(){
 	int	to_create = increment_oldest();
 	contact_list[to_create].intialise();
-	contact_list[to_create].print();
+	std::cout << "Contact " << contact_list[to_create].get_name() <<  " successfully created" << std::endl;
 }
 
-int		PhoneBook::increment_oldest()
-{
+int		PhoneBook::increment_oldest(){
 	if (oldest == 7)
 		oldest = 0;
 	else
@@ -33,7 +31,10 @@ int		PhoneBook::increment_oldest()
 	return (oldest);
 }
 
-int		PhoneBook::get_oldest()
-{
+int		PhoneBook::get_oldest(){
 	return (oldest);
+}
+
+Contact	PhoneBook::get_contact(int index){
+	return (contact_list[index]);
 }
