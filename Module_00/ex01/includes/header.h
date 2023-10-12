@@ -13,7 +13,6 @@
 #ifndef HEADER_H
 # define HEADER_H
 void	handleInputError();
-void	inputWithPrompt(std::string &attribute, const std::string &prompt);
 
 # include <iomanip>
 # define BASE_PROMPT "Type ADD to add a contact, SEARCH to search for a contact or EXIT to quit"

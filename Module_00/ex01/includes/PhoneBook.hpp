@@ -14,6 +14,7 @@
 #define PHONEBOOK_H
 #include "Contact.hpp"
 #include <cstdlib>
+#include <iomanip>
 #include <iostream>
 #include <string>
 
@@ -23,10 +24,12 @@ public:
 	PhoneBook();
 	void		create_contact();
 	int			get_oldest();
-	int			increment_oldest();
+	void		search();
 	Contact		get_contact(int index);
+
 private:
 	Contact	contact_list[8];
+	int		size;
 	int		oldest;
 };
 

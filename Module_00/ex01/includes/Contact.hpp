@@ -17,21 +17,23 @@
 #include <iostream>
 #include <string>
 
+enum field{
+	fName = 0,
+	lName = 1,
+	nName = 2,
+	nb = 3,
+	secret =4
+};
+
 class Contact
 {
 public:
-	Contact();
 	void		intialise();
 	void		print();
 	std::string	get_name();
-
-
+	std::string	tronc_info[3];
 private:
-	std::string	_first_name;
-	std::string	_last_name;
-	std::string	_nick_name;
-	std::string	_number;
-	std::string	_secret;
+	std::string _info[5];
 };
 
 

@@ -13,26 +13,26 @@
 #include "Contact.hpp"
 #include "header.h"
 
-Contact::Contact()
-{
-	this->_first_name = "";
-	this->_last_name = "";
-	this->_nick_name = "";
-	this->_number = "";
-	this->_secret = "";
-}
-
 void	Contact::intialise()
 {
-	inputWithPrompt(this->_first_name, "First Name:");
-	inputWithPrompt(this->_last_name, "Last Name:");
-	inputWithPrompt(this->_nick_name, "Nickname:");
-	inputWithPrompt(this->_number, "Number:");
-	inputWithPrompt(this->_secret, "Darkest Secret:");
-	std::cout << this;
+	std::string prompt[5] = {"First name:", "Last name:", "Nickname", "Phone number", "Secret"};
+
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout << prompt[i] << std::endl;
+		std::cin >> this->_info[i];
+		if (!std::cin)
+			handleInputError();
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		this->_info[i].size() > 10 ?
+				this->tronc_info[i] = this->_info[i].substr(0, 9) + ".":
+				this->tronc_info[i] = this->_info[i];
+	}
 }
 
 std::string	Contact::get_name()
 {
-	return (this->_first_name);
+	return (this->_info[fName]);
 }
