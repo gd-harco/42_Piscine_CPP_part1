@@ -15,13 +15,11 @@ NAME =	ContactManager1982
 
 SRC_PATH =	src/
 
-SRC =\
-	Contact.cpp		\
-	PhoneBook.cpp	\
-	main.cpp
+SRC =	Contact.cpp		\
+		PhoneBook.cpp	\
+		main.cpp
 
-DIR_INCS =\
-	includes/
+DIR_INCS =	includes/
 
 INCLUDES =\
 	$(addprefix -I , $(DIR_INCS))

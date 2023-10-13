@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:46:57 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/07 21:15:47 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/10/13 12:47:33 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	Contact::intialise()
 {
-	std::string prompt[5] = {"First name:", "Last name:", "Nickname", "Phone number", "Secret"};
+	std::string prompt[5] = {"First name:", "Last name:", "Nickname:", "Phone number:", "Secret"};
 
 	for (int i = 0; i < 5; i++)
 	{
@@ -31,6 +31,14 @@ void	Contact::intialise()
 				this->tronc_info[i] = this->_info[i];
 	}
 }
+
+void	Contact::print(){
+	std::string prompt[5] = {"First name: ", "Last name: ", "Nickname: ", "Phone number: ", "Secret: "};
+
+	for (int i = 0; i < 5; i++)
+		std::cout << prompt[i] << this->_info[i] << std::endl;
+}
+
 
 std::string	Contact::get_name()
 {

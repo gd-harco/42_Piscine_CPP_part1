@@ -23,7 +23,7 @@ class PhoneBook
 public:
 	PhoneBook();
 	void		create_contact();
-	int			get_oldest();
+	int			incrementOldest();
 	void		search();
 	Contact		get_contact(int index);
 
