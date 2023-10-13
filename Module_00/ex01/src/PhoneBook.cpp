@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 17:10:03 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/13 12:36:13 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:13:59 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,7 @@ void	PhoneBook::search()
 		std::cout << "Your phonebook is currently empty" << std::endl;
 		return;
 	}
-	std::cout << SEPERATOR << std::endl;
 	printHeader();
-	std::cout << SEPERATOR << std::endl;
 	while (i < this->size)
 	{
 		displaySearchLine(*this, i);
@@ -76,7 +74,7 @@ void	PhoneBook::search()
 			handleInputError();
 		input = atoi(s_input.c_str());
 	}
-	this->contact_list[input].print();
+	this->contact_list[input - 1].print();
 }
 
 int	PhoneBook::incrementOldest()
@@ -90,8 +88,10 @@ int	PhoneBook::incrementOldest()
 static void	printHeader(){
 	std::string h1 = "Index", h2 = "First Name", h3 = " Last Name", h4 = "  Nickname";
 
+	std::cout << SEPERATOR << std::endl;
 	std::cout << "|" << std::setw(10) << std::setfill(' ') << h1 << "|";
 	std::cout << std::setw(10) << std::setfill(' ') << h2 << "|";
 	std::cout << std::setw(10) << std::setfill(' ') << h3 << "|";
 	std::cout << std::setw(10) << std::setfill(' ') << h4 << "|" << std::endl;
+	std::cout << SEPERATOR << std::endl;
 }
