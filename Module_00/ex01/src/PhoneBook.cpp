@@ -64,14 +64,14 @@ void	PhoneBook::search()
 	}
 	std::cout << std::endl;
 	std::cout << "Enter the index of the contact you wish to display" << std::endl;
-	std::cin >> s_input;
+	std::getline(std::cin, s_input);
 	if (!std::cin)
 		handleInputError();
 	input = atoi(s_input.c_str());
 	while ((input <= 0 || input > 8) || input > this->size)
 	{
 		std::cout << "Contact does not exist\n" << "Enter the index of the contact you wish to display" << std::endl;
-		std::cin >> s_input;
+		std::getline(std::cin, s_input);
 		if (!std::cin)
 			handleInputError();
 		input = atoi(s_input.c_str());

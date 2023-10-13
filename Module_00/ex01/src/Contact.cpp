@@ -20,7 +20,7 @@ void	Contact::intialise()
 	for (int i = 0; i < 5; i++)
 	{
 		std::cout << prompt[i] << std::endl;
-		std::cin >> this->_info[i];
+		std::getline(std::cin, this->_info[i]);
 		if (!std::cin)
 			handleInputError();
 	}
