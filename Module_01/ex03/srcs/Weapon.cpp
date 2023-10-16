@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 11:47:07 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/07 21:07:45 by gd-harco         ###   ########.fr       */
+/*   Created: 2023/10/15 14:50:51 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/10/15 14:50:56 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
-#include "Contact.hpp"
-#include <cstdlib>
-#include <iomanip>
-#include <iostream>
-#include <string>
+#include "Weapon.hpp"
 
-class PhoneBook
+Weapon::Weapon(std::string type){
+	this->setType(type);
+}
+
+std::string const & Weapon::getType(){
+	return this->_type;
+}
+
+void	Weapon::setType(std::string toSet)
 {
-public:
-	PhoneBook();
-	void		create_contact();
-	int			incrementOldest();
-	void		search();
-	Contact		get_contact(int index);
-
-private:
-	Contact	contact_list[8];
-	int		size;
-	int		oldest;
-};
-
-
-#endif //PHONEBOOK_H
+	this->_type = toSet;
+}

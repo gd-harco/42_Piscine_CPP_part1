@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 11:47:07 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/07 21:07:45 by gd-harco         ###   ########.fr       */
+/*   Created: 2023/10/15 14:57:19 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/10/15 14:57:19 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
-#include "Contact.hpp"
-#include <cstdlib>
-#include <iomanip>
-#include <iostream>
-#include <string>
+#include "header.hpp"
 
-class PhoneBook
+int main()
 {
-public:
-	PhoneBook();
-	void		create_contact();
-	int			incrementOldest();
-	void		search();
-	Contact		get_contact(int index);
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
 
-private:
-	Contact	contact_list[8];
-	int		size;
-	int		oldest;
-};
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon	club = Weapon("crude spiked club");
+		HumanB jim("Jim");
 
-
-#endif //PHONEBOOK_H
+		jim.attack();
+		jim.setWeapon(&club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0;
+}

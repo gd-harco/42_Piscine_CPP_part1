@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 11:47:07 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/07 21:07:45 by gd-harco         ###   ########.fr       */
+/*   Created: 2023/10/13 16:50:31 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/10/13 17:17:01 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
-#include "Contact.hpp"
-#include <cstdlib>
-#include <iomanip>
-#include <iostream>
-#include <string>
+#include "Zombie.hpp"
 
-class PhoneBook
-{
-public:
-	PhoneBook();
-	void		create_contact();
-	int			incrementOldest();
-	void		search();
-	Contact		get_contact(int index);
+void randomChump(std::string name){
+	Zombie random(name);
 
-private:
-	Contact	contact_list[8];
-	int		size;
-	int		oldest;
-};
-
-
-#endif //PHONEBOOK_H
+	random.announce();
+}

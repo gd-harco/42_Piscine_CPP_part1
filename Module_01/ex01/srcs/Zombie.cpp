@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 11:47:07 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/07 21:07:45 by gd-harco         ###   ########.fr       */
+/*   Created: 2023/10/13 16:49:50 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/10/13 19:16:50 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
-#include "Contact.hpp"
-#include <cstdlib>
-#include <iomanip>
-#include <iostream>
-#include <string>
+#include "Zombie.hpp"
 
-class PhoneBook
-{
-public:
-	PhoneBook();
-	void		create_contact();
-	int			incrementOldest();
-	void		search();
-	Contact		get_contact(int index);
+Zombie::Zombie()
+{}
 
-private:
-	Contact	contact_list[8];
-	int		size;
-	int		oldest;
-};
+Zombie::~Zombie(){
+	std::cout << this->_name << " has been destroyed, hopfully" << std::endl;
+}
 
+void	Zombie::announce(void){
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
 
-#endif //PHONEBOOK_H
+void Zombie::set(std::string name, int index){
+	this->_name = name;
+	this->_id = index;
+}

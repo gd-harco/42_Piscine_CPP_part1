@@ -6,20 +6,20 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 20:23:57 by gd-harco          #+#    #+#              #
-#    Updated: 2023/10/15 14:53:29 by gd-harco         ###   ########.fr        #
+#    Updated: 2023/10/13 17:57:58 by gd-harco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	ContactManager1982
+NAME =	Moar_brainz!
 
 
-SRC_PATH =	src/
+SRC_PATH =	srcs/
 
-SRC =	Contact.cpp		\
-		PhoneBook.cpp	\
-		main.cpp
+SRC =	main.cpp		\
+		zombieHorde.cpp	\
+		Zombie.cpp
 
-DIR_INCS =	includes/
+DIR_INCS =	incs/
 
 INCLUDES =\
 	$(addprefix -I , $(DIR_INCS))
@@ -28,9 +28,8 @@ DIR_BUILD =		.build/
 OBJS =			$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
 DEPS =			$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
 CPPFLAGS =		-Wall -Wextra -Werror -std=c++98 -g3
-DEPS_FLAGS =	-MMD -MP
 RM =			rm -rf
-AR =			ar rc
+AR =			ar rcs
 CXX=c++
 
 .PHONY:		all

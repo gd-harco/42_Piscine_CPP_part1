@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 11:47:07 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/07 21:07:45 by gd-harco         ###   ########.fr       */
+/*   Created: 2023/10/15 14:55:52 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/10/15 14:55:52 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
-#include "Contact.hpp"
-#include <cstdlib>
-#include <iomanip>
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
+#include "Weapon.hpp"
 #include <iostream>
-#include <string>
 
-class PhoneBook
+class HumanB
 {
 public:
-	PhoneBook();
-	void		create_contact();
-	int			incrementOldest();
-	void		search();
-	Contact		get_contact(int index);
-
+	HumanB(std::string name, Weapon* toEquiped);
+	HumanB(std::string name);
+	~HumanB();
+	void	attack();
+	void	setWeapon(Weapon *toEquip);
 private:
-	Contact	contact_list[8];
-	int		size;
-	int		oldest;
+	Weapon*		_equiped;
+	std::string	_name;
 };
 
 
-#endif //PHONEBOOK_H
+#endif //HUMANA_HPP

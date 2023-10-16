@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 11:47:07 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/07 21:07:45 by gd-harco         ###   ########.fr       */
+/*   Created: 2023/10/14 13:31:33 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/10/14 14:08:43 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
-#include "Contact.hpp"
-#include <cstdlib>
-#include <iomanip>
-#include <iostream>
-#include <string>
+#include "Zombie.hpp"
 
-class PhoneBook
-{
-public:
-	PhoneBook();
-	void		create_contact();
-	int			incrementOldest();
-	void		search();
-	Contact		get_contact(int index);
+Zombie* zombieHorde(int N, std::string name){
+	Zombie* horde = new Zombie[N];
+	std::string zName;
+	std::string att[2] = {"even", "odd"};
+	for (int i=0; i < N; i++)
+	{
+		zName = name + "_" + att[i % 2];
+		horde[i].set(zName, i);
+	};
+	return (horde);
+}
 
-private:
-	Contact	contact_list[8];
-	int		size;
-	int		oldest;
-};
+void	callHorde(Zombie *horde, int hordeSize){
+	int	i = -1;
 
-
-#endif //PHONEBOOK_H
+	while (++i < hordeSize)
+		horde[i].announce();
+}

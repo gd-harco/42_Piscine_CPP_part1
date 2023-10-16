@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 17:00:33 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/07 20:55:29 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:07:52 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	printHeader();
 int main(void)
 {
 	PhoneBook	adress_book;
-
 	std::string	input;
+
 	std::cout << "Welcome to your phonebook !" << std::endl;
 	std::cout << BASE_PROMPT << std::endl;
-	std::cin >> input;
+	std::getline(std::cin, input);
 	if (!std::cin)
 		handleInputError();
 	while (input.compare("EXIT") != 0){
@@ -33,8 +33,10 @@ int main(void)
 		else if (input.compare("SEARCH") == 0){
 			adress_book.search();
 		}
+		else
+			std::cout << "Unrecognised command" << std::endl;
 		std::cout << BASE_PROMPT << std::endl;
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (!std::cin)
 			handleInputError();
 	}
