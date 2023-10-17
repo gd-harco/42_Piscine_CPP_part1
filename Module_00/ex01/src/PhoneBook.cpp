@@ -81,7 +81,7 @@ int	PhoneBook::incrementOldest()
 {
 	++this->oldest;
 	if (this->oldest == 8)
-		this->oldest = 1;
+		this->oldest = 0;
 	return (this->oldest);
 }
 
