@@ -19,15 +19,13 @@
 static void	printHeader();
 
 PhoneBook::PhoneBook(){
-	this->oldest = -1;
 	this->size = 0;
 }
 
 void	PhoneBook::create_contact(){
-	int	to_create = this->incrementOldest();
+	int	to_create = this->size % 8;
 	contact_list[to_create].intialise();
-	if (size <8)
-		size++;
+	size++;
 	std::cout << "Contact " << contact_list[to_create].get_name() <<  " successfully created" << std::endl;
 }
 
@@ -54,26 +52,28 @@ void	PhoneBook::search()
 		return;
 	}
 	printHeader();
-	while (i < this->size)
+	while (i < this->size && i < 8)
 	{
 		displaySearchLine(*this, i);
 		std::cout << SEPERATOR << std::endl;
 		i++;
 	}
 	std::cout << std::endl;
-	std::cout << "Enter the index of the contact you wish to display" << std::endl;
+	std::cout << "Enter the index of the contact you wish to display, 0 to return to main menu." << std::endl;
 	std::getline(std::cin, s_input);
 	if (!std::cin)
 		handleInputError();
 	input = atoi(s_input.c_str());
-	while ((input <= 0 || input > 8) || input > this->size)
+	while ((input < 0 || input > 8) || input > this->size)
 	{
-		std::cout << "Contact does not exist\n" << "Enter the index of the contact you wish to display" << std::endl;
+		std::cout << "Contact does not exist\n" << "Enter the index of the contact you wish to display, 0 to return to main menu." << std::endl;
 		std::getline(std::cin, s_input);
 		if (!std::cin)
 			handleInputError();
 		input = atoi(s_input.c_str());
 	}
+	if (input == 0)
+		return;
 	this->contact_list[input - 1].print();
 }
 
