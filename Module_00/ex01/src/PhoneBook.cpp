@@ -77,14 +77,6 @@ void	PhoneBook::search()
 	this->contact_list[input - 1].print();
 }
 
-int	PhoneBook::incrementOldest()
-{
-	++this->oldest;
-	if (this->oldest == 8)
-		this->oldest = 0;
-	return (this->oldest);
-}
-
 static void	printHeader(){
 	std::string h1 = "Index", h2 = "First Name", h3 = " Last Name", h4 = "  Nickname";
 

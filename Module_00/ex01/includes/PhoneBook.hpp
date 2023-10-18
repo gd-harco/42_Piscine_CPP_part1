@@ -23,14 +23,12 @@ class PhoneBook
 public:
 	PhoneBook();
 	void		create_contact();
-	int			incrementOldest();
 	void		search();
 	Contact		get_contact(int index);
 
 private:
 	Contact	contact_list[8];
 	int		size;
-	int		oldest;
 };
 
 
