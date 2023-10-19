@@ -23,6 +23,11 @@ void	Contact::intialise()
 		std::getline(std::cin, this->_info[i]);
 		if (!std::cin)
 			handleInputError();
+		if (this->_info[i].empty())
+		{
+			std::cout << "Field can't be empty." << std::endl;
+			i--;
+		}
 	}
 	for (int i = 0; i < 3; i++)
 	{
