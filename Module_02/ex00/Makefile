@@ -6,18 +6,19 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 20:23:57 by gd-harco          #+#    #+#              #
-#    Updated: 2023/10/15 19:11:45 by gd-harco         ###   ########.fr        #
+#    Updated: 2023/10/22 21:14:19 by gd-harco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	mySed
+NAME =	Fixed
 
 
 SRC_PATH =	srcs/
 
-SRC =	main.cpp
+SRC =	main.cpp	\
+		Fixed/Fixed.cpp
 
-DIR_INCS =	incs/
+DIR_INCS =	incs/ srcs/Fixed/
 
 INCLUDES =\
 	$(addprefix -I , $(DIR_INCS))
