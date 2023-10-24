@@ -6,19 +6,21 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 20:23:57 by gd-harco          #+#    #+#              #
-#    Updated: 2023/10/24 11:06:57 by gd-harco         ###   ########.fr        #
+#    Updated: 2023/10/24 12:03:32 by gd-harco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	BSP
+NAME =	Fixed
 
 
 SRC_PATH =	srcs/
 
 SRC =	main.cpp	\
-		Fixed/Fixed.cpp
+		bsp.cpp		\
+		Fixed/Fixed.cpp	\
+		Point/Point.cpp	\
 
-DIR_INCS =	incs/ srcs/Fixed/
+DIR_INCS =	incs/ srcs/Fixed/ srcs/Point/
 
 INCLUDES =\
 	$(addprefix -I , $(DIR_INCS))
