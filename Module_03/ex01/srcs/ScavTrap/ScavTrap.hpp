@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:28:39 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/01 14:16:40 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/02 11:53:30 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 class ScavTrap : public ClapTrap {
 public:
+	ScavTrap();
 	ScavTrap(const std::string &name);
 	ScavTrap(const ScavTrap &old);
 	~ScavTrap();

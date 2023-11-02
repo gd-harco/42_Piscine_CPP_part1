@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:58:48 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/31 19:01:10 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/02 11:52:23 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 #include "ClapTrap.hpp"
 # define SEPERATOR "+---------------+---------------+---------------+---------------+"
 
+ClapTrap::ClapTrap() :
+		_name("default"), _HP(10), _EP(10), _AD(0) {
+	std::cout << "ClapTrap " + this->_name + " created by default constructor." << std::endl;
+}
+
 ClapTrap::ClapTrap(const std::string &name):
 	_name(name), _HP(10), _EP(10), _AD(0) {
-	std::cout << "ClapTrap " + this->_name + " created by default constructor" << std::endl;
+	std::cout << "ClapTrap " + this->_name + " created by name constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &old):
@@ -26,7 +31,6 @@ ClapTrap::ClapTrap(const ClapTrap &old):
 
 ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap " + this->_name + " destroyed by default destructor" << std::endl;
-
 }
 
 
@@ -39,8 +43,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &old) {
 }
 
 void ClapTrap::attack(const std::string target) {
-	if (!this->_HP || !this->_EP)
-	{
+	if (!this->_HP || !this->_EP) {
 		std::cout << this->_name + " couldn't perform the attack against " + target << std::endl;
 		return ;
 	}
