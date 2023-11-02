@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:43:49 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/02 11:58:34 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:52:02 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #define _Fragtrap_HPP_
 
 #include <iostream>
-#include "ClapTrap.hpp"
+#include "../ClapTrap/ClapTrap.hpp"
 
 // ******************************************************** //
 //                         CLASSES                         //
 // ****************************************************** //
 
-class	FragTrap : public ClapTrap
+class	FragTrap : public virtual ClapTrap
 {
 	public	:
 		FragTrap();
