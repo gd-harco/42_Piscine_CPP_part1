@@ -6,11 +6,11 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 20:23:57 by gd-harco          #+#    #+#              #
-#    Updated: 2023/11/03 10:23:13 by gd-harco         ###   ########.fr        #
+#    Updated: 2023/11/03 14:32:02 by gd-harco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	Polymorphism
+NAME =	ideas
 
 
 SRC_PATH =	srcs/
@@ -20,14 +20,16 @@ SRC =	main.cpp					\
 		Cat/Cat.cpp					\
 		Dog/Dog.cpp					\
 		WrongAnimal/WrongAnimal.cpp	\
-		WrongCat/WrongCat.cpp
+		WrongCat/WrongCat.cpp		\
+		Brain/Brain.cpp
 
-DIR_INCS =	incs/ \
-			srcs/Animal/ \
-			srcs/Cat/ \
-			srcs/Dog/ \
-			srcs/WrongAnimal/ \
-			srcs/WrongCat/
+DIR_INCS =	incs/				\
+			srcs/Animal/		\
+			srcs/Cat/			\
+			srcs/Dog/			\
+			srcs/WrongAnimal/	\
+			srcs/WrongCat/		\
+			srcs/Brain/
 
 INCLUDES =\
 	$(addprefix -I , $(DIR_INCS))
