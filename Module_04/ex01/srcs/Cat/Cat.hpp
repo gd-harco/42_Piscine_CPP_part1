@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 10:33:50 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/03 11:10:09 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/03 17:15:45 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 // ******************************************************** //
 //                         CLASSES                         //
 // ****************************************************** //
@@ -27,6 +28,10 @@ class	Cat : public Animal
 		~Cat ();
 		Cat &operator= (const Cat &obj);
 		void makeSound() const;
+		void	setIdea(int id);
+		void	printIdea(int id);
+	private:
+		Brain* brain;
 };
 
 #endif
