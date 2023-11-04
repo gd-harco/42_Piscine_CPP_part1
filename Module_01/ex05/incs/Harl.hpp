@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:20:38 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/19 16:20:38 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/04 17:52:34 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 #include <string>
 
 
-class Harl
-{
+class Harl {
 private:
 	void	_debug(void);
 	void	_info(void);

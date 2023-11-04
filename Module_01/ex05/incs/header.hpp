@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 20:01:36 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/19 20:04:12 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/04 17:52:44 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 typedef void (Harl::*ptr)(void);
 
-struct s_table{
+struct s_table {
 	std::string	level;
 	ptr			call;
 };
