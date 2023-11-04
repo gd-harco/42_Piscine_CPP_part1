@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:04:56 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/17 21:36:25 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/04 17:50:29 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 static std::string    read_file(std::ifstream &file);
 
-int main(int argc, char **argv){
+int main(int argc, char **argv) {
 	if (argc  != 4){
 		std::cout << "Wrong number of argument" << std::endl;
 		return (1);
