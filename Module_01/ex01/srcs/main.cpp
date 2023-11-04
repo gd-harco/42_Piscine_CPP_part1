@@ -11,21 +11,19 @@
 /* ************************************************************************** */
 
 #include "header.hpp"
-static std::string	getInput();
+static std::string	getInput(Zombie *horde);
 static void			quit(Zombie *horde);
+static Zombie		*createHorde(int &hordeSize);	//on envoie une reference pour que
+													//la modif dans la fonction soit
+													//effective dans main.
 
 int main(void) {
-	int	nb;
-	int	hordeSize;
-	std::string	baseName;
+	int			nb;
+	int			hordeSize = 0;
 	std::string	input;
-	Zombie* horde;
+	Zombie*		horde;
 
-	std::cout << "enter the size of the horde:" << std::endl;
-	hordeSize = std::atoi(getInput().c_str());
-	std::cout << "enter the base name:" << std::endl;
-	baseName = getInput();
-	horde = zombieHorde(hordeSize, baseName);
+	horde = createHorde(hordeSize);
 	std::cout << "Enter the number of the zombie to call, ALL to call the horde, EXIT to quit" << std::endl;
 	std::getline(std::cin, input);
 	if (!std::cin)
@@ -68,4 +66,18 @@ void	quit(Zombie *horde) {
 	if (horde)
 		delete[] horde;
 	exit(0) ;
+}
+
+static Zombie	*createHorde(int &hordeSize) {
+	std::string	baseName;
+
+	std::cout << "enter the size of the horde:" << std::endl;
+	hordeSize = std::atoi(getInput(NULL).c_str());
+	while (hordeSize <= 0) {
+		std::cout << "Please enter a positive value" << std::endl;
+		hordeSize = std::atoi(getInput(NULL).c_str());
+	}
+	std::cout << "enter the base name:" << std::endl;
+	baseName = getInput(NULL);
+	return (zombieHorde(hordeSize, baseName));
 }
