@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 14:55:52 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/15 14:55:52 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/04 17:27:30 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 #include "Weapon.hpp"
 #include <iostream>
 
-class HumanB
-{
+class HumanB {
 public:
 	HumanB(std::string name, Weapon* toEquiped);
 	HumanB(std::string name);
@@ -27,6 +26,5 @@ private:
 	Weapon*		_equiped;
 	std::string	_name;
 };
-
 
 #endif //HUMANA_HPP

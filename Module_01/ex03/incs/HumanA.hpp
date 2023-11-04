@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 14:55:15 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/15 14:55:15 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/04 17:27:17 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include <iostream>
 
 
-class HumanA
-{
+class HumanA {
 public:
 	HumanA(std::string name, Weapon& toEquiped);
 	~HumanA();

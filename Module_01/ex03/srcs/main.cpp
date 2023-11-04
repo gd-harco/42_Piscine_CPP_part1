@@ -6,14 +6,13 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 14:57:19 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/15 14:57:19 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/04 17:12:29 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.hpp"
 
-int main()
-{
+int main() {
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanA bob("Bob", club);
