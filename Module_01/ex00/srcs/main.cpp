@@ -6,13 +6,13 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:49:28 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/13 17:50:21 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/04 12:57:46 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int main(void){
+int main(void) {
 	Zombie* heapZombie;
 
 	std::cout << "Creating a zombie on the heap, using newZombie(std::string name)" << std::endl;
