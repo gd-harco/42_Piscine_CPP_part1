@@ -6,20 +6,21 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 20:23:57 by gd-harco          #+#    #+#              #
-#    Updated: 2023/10/13 17:57:58 by gd-harco         ###   ########.fr        #
+#    Updated: 2023/11/04 11:53:03 by gd-harco         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	HI_THIS_IS_BRAIN!
+NAME		=	HI_THIS_IS_BRAIN!
 
-SRC =	main.cpp
+SRC			=	main.cpp
 
-DIR_BUILD =		.build/
-OBJS =			$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
-CPPFLAGS =		-Wall -Wextra -Werror -std=c++98 -g3
-RM =			rm -rf
-AR =			ar rcs
-CXX=c++
+DIR_BUILD	=	.build/
+OBJS		=	$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
+DEPS		=	$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
+DEPS_FLAGS	=	-MMD -MP
+RM			=	rm -rf
+CXX			=	c++
 
 .PHONY:		all
 all:

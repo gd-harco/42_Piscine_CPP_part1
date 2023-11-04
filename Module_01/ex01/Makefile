@@ -6,31 +6,31 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 20:23:57 by gd-harco          #+#    #+#              #
-#    Updated: 2023/10/13 17:57:58 by gd-harco         ###   ########.fr        #
+#    Updated: 2023/11/04 11:34:23 by gd-harco         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	Moar_brainz!
+NAME		=	Moar_brainz!
 
 
-SRC_PATH =	srcs/
+SRC_PATH	=	srcs/
 
-SRC =	main.cpp		\
-		zombieHorde.cpp	\
-		Zombie.cpp
+SRC			=	main.cpp		\
+				zombieHorde.cpp	\
+				Zombie.cpp
 
-DIR_INCS =	incs/
+DIR_INCS	=	incs/
 
-INCLUDES =\
+INCLUDES	=\
 	$(addprefix -I , $(DIR_INCS))
 
-DIR_BUILD =		.build/
-OBJS =			$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
-DEPS =			$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
-CPPFLAGS =		-Wall -Wextra -Werror -std=c++98 -g3
-RM =			rm -rf
-AR =			ar rcs
-CXX=c++
+DIR_BUILD	=	.build/
+OBJS		=	$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
+DEPS		=	$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
+DEPS_FLAGS	=	-MMD -MP
+RM			=	rm -rf
+CXX			=	c++
 
 .PHONY:		all
 all:

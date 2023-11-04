@@ -6,32 +6,32 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 20:23:57 by gd-harco          #+#    #+#              #
-#    Updated: 2023/10/13 17:02:16 by gd-harco         ###   ########.fr        #
+#    Updated: 2023/11/04 11:31:59 by gd-harco         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	BraiiiiiiinnnzzzZ
+NAME		=	BraiiiiiiinnnzzzZ
 
 
-SRC_PATH =	srcs/
+SRC_PATH	=	srcs/
 
-SRC =	main.cpp		\
-		newZombie.cpp	\
-		randomChump.cpp	\
-		Zombie.cpp
+SRC			=	main.cpp		\
+				newZombie.cpp	\
+				randomChump.cpp	\
+				Zombie.cpp
 
-DIR_INCS =	incs/
+DIR_INCS	=	incs/
 
-INCLUDES =\
+INCLUDES	=	\
 	$(addprefix -I , $(DIR_INCS))
 
-DIR_BUILD =		.build/
-OBJS =			$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
-DEPS =			$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
-CPPFLAGS =		-Wall -Wextra -Werror -std=c++98 -g3
-RM =			rm -rf
-AR =			ar rcs
-CXX=c++
+DIR_BUILD	=	.build/
+OBJS		=	$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
+DEPS		=	$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
+DEPS_FLAGS	=	-MMD -MP
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
+RM			=	rm -rf
+CXX			=	c++
 
 .PHONY:		all
 all:
