@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:49:50 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/04 14:23:22 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/11/04 14:23:53 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Zombie::Zombie(std::string name)
 
 Zombie::~Zombie() {
 	std::cout << "Zombie : destructor called for : " + this->_name << std::endl;
-
 }
 
 void	Zombie::announce(void) {

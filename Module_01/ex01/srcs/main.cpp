@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:49:28 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/10/13 17:50:21 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/04 14:22:20 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 static std::string	getInput();
 static void			quit(Zombie *horde);
 
-int main(void){
+int main(void) {
 	int	nb;
 	int	hordeSize;
 	std::string	baseName;
@@ -52,7 +52,7 @@ int main(void){
 	quit(horde);
 }
 
-static std::string	getInput(){
+static std::string	getInput() {
 	std::string input;
 
 	std::getline(std::cin, input);
@@ -64,7 +64,7 @@ static std::string	getInput(){
 	return (input);
 }
 
-void	quit(Zombie *horde){
+void	quit(Zombie *horde) {
 	if (horde)
 		delete[] horde;
 	exit(0) ;
