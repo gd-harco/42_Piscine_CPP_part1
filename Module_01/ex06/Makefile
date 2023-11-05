@@ -6,36 +6,36 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 20:23:57 by gd-harco          #+#    #+#              #
-#    Updated: 2023/10/19 16:21:12 by gd-harco         ###   ########.fr        #
+#    Updated: 2023/11/05 12:26:44 by gd-harco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	Harl
+NAME		=	harlFilter
 
-SRC_PATH =	srcs/
+SRC_PATH	=	srcs/
 
-SRC =	main.cpp	Harl.cpp
+SRC			=	main.cpp	\
+				Harl.cpp
 
-DIR_INCS =	incs/
+DIR_INCS	=	incs/
 
-INCLUDES =\
+INCLUDES	=	\
 	$(addprefix -I , $(DIR_INCS))
 
-DIR_BUILD =		.build/
-OBJS =			$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
-DEPS =			$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
-CPPFLAGS =		-Wall -Wextra -Werror -std=c++98 -g3
-DEPSFLAGS =		-MMD -MP
-RM =			rm -rf
-AR =			ar rcs
-CXX=			c++
+DIR_BUILD	=	.build/
+OBJS		=	$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
+DEPS		=	$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
+DEPS_FLAGS	=	-MMD -MP
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
+RM			=	rm -rf
+CXX			=	c++
 
 .PHONY:		all
 all:
 			$(MAKE) $(NAME)
 
 $(NAME):	$(OBJS)
-			$(CXX) $(CPPFLAGS) $(INCLUDES) $(OBJS) -o $(NAME)
+			$(CXX) $(CPPFLAGS) $(INCLUDES) $(OBJS) $(LIBS) -o $(NAME)
 
 .PHONY:	bonus
 bonus:	all
@@ -56,4 +56,4 @@ re:		fclean
 
 $(DIR_BUILD)%.o : $(SRC_PATH)%.cpp
 		@mkdir -p $(shell dirname $@)
-		$(CXX) $(CPPFLAGS) $(DEPSFLAGS) $(INCLUDES) -c $< -o $@
+		$(CXX) $(CPPFLAGS) $(DEPS_FLAGS) $(INCLUDES) -c $< -o $@
