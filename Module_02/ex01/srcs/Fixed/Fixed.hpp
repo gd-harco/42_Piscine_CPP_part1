@@ -10,27 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-// Created by gd-harco on 22/10/23.
-//
-
 #ifndef FIXED_HPP
 #define FIXED_HPP
 #include <iostream>
-/*
- * A constructor that takes a constant integer as a parameter.
-It converts it to the corresponding fixed-point value. The fractional bits value is
-initialized to 8 like in exercise 00.
-• A constructor that takes a constant floating-point number as a parameter.
-It converts it to the corresponding fixed-point value. The fractional bits value is
-initialized to 8 like in exercise 00.
-• A member function float toFloat( void ) const;
-that converts the fixed-point value to a floating-point value.
-• A member function int toInt( void ) const;
-that converts the fixed-point value to an integer value.
- */
-class Fixed
-{
+
+class Fixed {
 private:
 	int	_rawBits;
 	static const int _fractionalBits = 8;
@@ -42,7 +26,7 @@ public:
 	~Fixed();
 	Fixed& operator=(const Fixed& rhs);
 	int getRawBits() const;
-	void setRawBits(int fixe_number_value);
+	void setRawBits(const int raw);
 	float toFloat( void ) const;
 	int		toInt( void ) const;
 };
