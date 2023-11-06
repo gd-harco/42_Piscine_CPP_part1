@@ -14,7 +14,7 @@
 #define FIXED_HPP
 #include <iostream>
 
-class Fixed	{
+class Fixed{
 private:
 	int	_rawBits;
 	static const int _fractionalBits = 8;
@@ -51,7 +51,7 @@ public:
 	int getRawBits() const;
 
 	//setter:
-	void setRawBits(int fixe_number_value);
+	void setRawBits(const int raw);
 
 	//member function:
 	float				toFloat( void ) const;
