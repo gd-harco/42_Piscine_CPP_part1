@@ -16,9 +16,8 @@ void	continuousAttack(ClapTrap &toTest);
 
 int main() {
 	{
-		// Test constructor, destructor, and attack()
+		// Test constructor and attack()
 		ClapTrap ct1("Clap1");
-
 		ct1.attack("Target");
 
 		// Test copy constructor
@@ -34,6 +33,7 @@ int main() {
 		// Test takeDamage() and beRepaired()
 		ClapTrap ct1("Value Test");
 
+		ct1.printStat();
 		ct1.takeDamage(3);
 		ct1.printStat();
 		ct1.beRepaired(2);

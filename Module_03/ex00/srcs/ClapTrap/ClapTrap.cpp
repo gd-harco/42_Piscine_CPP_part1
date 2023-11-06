@@ -14,18 +14,18 @@
 #include "ClapTrap.hpp"
 # define SEPERATOR "+---------------+---------------+---------------+---------------+"
 
-ClapTrap::ClapTrap() :
-		_name("default"), _HP(10), _EP(10), _AD(0) {
+ClapTrap::ClapTrap()
+		: _name("default"), _HP(10), _EP(10), _AD(0) {
 	std::cout << "ClapTrap " + this->_name + " created by default constructor." << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string &name):
-	_name(name), _HP(10), _EP(10), _AD(0) {
+ClapTrap::ClapTrap(const std::string &name)
+		: _name(name), _HP(10), _EP(10), _AD(0) {
 	std::cout << "ClapTrap " + this->_name + " created by name constructor." << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &old):
-	_name(old._name), _HP(old._HP), _EP(old._EP), _AD(old._AD) {
+ClapTrap::ClapTrap(const ClapTrap &old)
+		: _name(old._name), _HP(old._HP), _EP(old._EP), _AD(old._AD) {
 	std::cout << "ClapTrap " + this->_name + " created by copy constructor." << std::endl;
 }
 
@@ -42,7 +42,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &old) {
 }
 
 void ClapTrap::attack(const std::string target) {
-	if (!this->_HP || !this->_EP){
+	if (!this->_HP || !this->_EP) {
 		std::cout << this->_name + " couldn't perform the attack against " + target << std::endl;
 		return ;
 	}
@@ -58,8 +58,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << "ClapTrap " + this->_name + " took "
 	<< amount << " damage" << std::endl;
 	this->_HP -= amount;
-	if (this->_HP <= 0)
-	{
+	if (this->_HP <= 0) {
 		std::cout << this->_name << " has fainted" << std::endl;
 		this->_HP = 0;
 	}
