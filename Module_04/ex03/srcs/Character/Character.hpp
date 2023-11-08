@@ -14,8 +14,21 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
+#include <iostream>
+#include "AMateria.hpp"
 
 class Character : public ICharacter {
+	public:
+		Character();
+		Character(std::string const &name);
+		Character(Character const &obj);
+		~Character();
+		Character &operator= (const Character &obj);
+	private:
+		std::string	_name;
+		AMateria	*_inventory[4];
+		void		setEmptyInventory();
+		void		emptyInventory();
 };
 
 
