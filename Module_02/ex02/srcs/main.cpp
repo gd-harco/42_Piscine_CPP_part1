@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 21:19:28 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/05 17:57:10 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/08 10:25:03 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(){
 		Fixed const c(42.42f);
 		Fixed const d(b);
 
-		a = Fixed(1234.4321f);
+		a = Fixed(12.34f);
 
 		std::cout << "----Testing Constructor and Assignment Operator----" << std::endl;
 		std::cout << "Expecting a to be 1234.43 "<< std::endl;
@@ -51,32 +51,22 @@ int main(){
 		std::cout << "d != b: " << (d != b ? "True\n" : "False\n") << std::endl;
 
 		std::cout << "----Testing Arithmetic Operators---- "<< std::endl;
-		std::cout << "Expecting 'a + b' to be 1244.43 "<< std::endl;
 		std::cout << "a + b: " << a + b << std::endl;
-		std::cout << "Expecting 'a - b' to be 1224.43 "<< std::endl;
 		std::cout << "a - b: " << a - b << std::endl;
-		std::cout << "Expecting 'a * b' to be 12344,3 "<< std::endl;
 		std::cout << "a * b: " << a * b << std::endl;
-		std::cout << "Expecting 'a / b' to be 123,445 "<< std::endl;
 		std::cout << "a / b: " << a / b << std::endl;
 		std::cout << "Expecting 'a / 0' to show an error "<< std::endl;
 		std::cout << "a / 0: " << a / 0 << "\n" << std::endl;
 
 		std::cout << "----Testing Increment Operators----" << std::endl;
-		std::cout << "Expecting 'a++' to be 1234.43 and then a to be 1234.44" << std::endl;
 		std::cout << "a++: " << a++ << std::endl;
 		std::cout << "a: " << a << "\n" << std::endl;
-		//TODO: Shit doesn't work, ask Vince
-		std::cout << "Expecting '++a' to be 1234.45 and then a to be 1234.45" << std::endl;
 		std::cout << "++a: " << ++a << std::endl;
 		std::cout << "a: " << a << "\n" << std::endl;
 
 		std::cout << "----Testing decrement Operators----" << std::endl;
-		std::cout << "Expecting 'a--' to be 1234.45 and then a to be 1234.44" << std::endl;
 		std::cout << "a--: " << a-- << std::endl;
 		std::cout << "a: " << a << "\n" << std::endl;
-		//TODO: Shit doesn't work, ask Vince
-		std::cout << "Expecting '--a' to be 1234.43 and then a to be 1234.43" << std::endl;
 		std::cout << "--a: " << --a << std::endl;
 		std::cout << "a: " << a << "\n" << std::endl;
 

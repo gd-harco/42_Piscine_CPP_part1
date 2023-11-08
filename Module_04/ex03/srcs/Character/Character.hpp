@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 14:19:38 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/08 14:19:38 by gd-harco         ###   ########.fr       */
+/*   Created: 2023/11/08 14:01:33 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/11/08 14:02:02 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _Cure_HPP_
-#define _Cure_HPP_
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class	Cure : public AMateria {
-	public	:
-		Cure ();
-		Cure (Cure const &obj);
-		~Cure ();
-		Cure &operator= (const Cure &obj);
-
-		Cure* clone() const;
-		void use(ICharacter& target);
+class Character : public ICharacter {
 };
 
-#endif
+
+#endif //CHARACTER_HPP
