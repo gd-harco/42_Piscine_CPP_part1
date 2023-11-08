@@ -32,7 +32,6 @@ ScavTrap::ScavTrap(const ScavTrap &old) : ClapTrap(old) {
 
 ScavTrap::~ScavTrap() {
 	std::cout << "ScavTrap " + this->_name + " destroyed by default destructor" << std::endl;
-
 }
 
 void ScavTrap::attack(const std::string target) {
