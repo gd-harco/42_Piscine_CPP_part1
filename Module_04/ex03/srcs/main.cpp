@@ -6,12 +6,12 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 17:15:11 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/03 17:53:00 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/08 14:54:55 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.hpp"
 
 int main(void) {
-	Ice();
+
 }
