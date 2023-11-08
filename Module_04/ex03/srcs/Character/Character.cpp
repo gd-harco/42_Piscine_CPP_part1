@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:25:52 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/08 16:36:52 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:51:09 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,24 @@ void Character::emptyInventory() {
 	for (int i=0; i < 4 && this->_inventory[i]; i++) {
 		delete this->_inventory[i];
 	}
+}
+
+void Character::equip(AMateria *m) {
+	int	i=0;
+
+	while (this->_inventory[i])
+		i++;
+	this->_inventory[i] = m;
+}
+
+void Character::unequip(int idx) {
+	if (idx < 0 || idx > 4 || !this->_inventory[idx])
+		std::cout << "No materia equipped at slot " << idx << std::endl;
+	else
+
+
+}
+
+void Character::use(int idx, ICharacter &target) {
+
 }

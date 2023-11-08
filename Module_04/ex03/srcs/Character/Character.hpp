@@ -29,6 +29,10 @@ class Character : public ICharacter {
 		AMateria	*_inventory[4];
 		void		setEmptyInventory();
 		void		emptyInventory();
+		void equip(AMateria* m) = 0;
+		void unequip(int idx) = 0;
+		void use(int idx, ICharacter& target) = 0;
+
 };
 
 
