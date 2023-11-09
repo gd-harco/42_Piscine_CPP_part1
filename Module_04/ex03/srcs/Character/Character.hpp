@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:01:33 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/08 14:02:02 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:07:38 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,21 @@
 
 class Character : public ICharacter {
 	public:
-		Character();
 		Character(std::string const &name);
 		Character(Character const &obj);
 		~Character();
 		Character &operator= (const Character &obj);
-	private:
-		std::string	_name;
-		AMateria	*_inventory[4];
+
 		void		setEmptyInventory();
 		void		emptyInventory();
-		void equip(AMateria* m) = 0;
-		void unequip(int idx) = 0;
-		void use(int idx, ICharacter& target) = 0;
-
+		void		equip(AMateria* m);
+		void		unequip(int idx);
+		std::string	const & getName() const;
+	private:
+		Character();
+		std::string	_name;
+		AMateria	*_inventory[4];
+//		void		use(int idx, ICharacter& target) = 0;
 };
 
 

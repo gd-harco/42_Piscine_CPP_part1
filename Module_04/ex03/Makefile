@@ -6,7 +6,7 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 20:23:57 by gd-harco          #+#    #+#              #
-#    Updated: 2023/11/08 16:27:57 by gd-harco         ###   ########.fr        #
+#    Updated: 2023/11/09 11:19:48 by gd-harco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ INCLUDES =\
 DIR_BUILD =		.build/
 OBJS =			$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
 DEPS =			$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
-CPPFLAGS =		-Wall -Wextra -Werror -std=c++98 -g3
+CPPFLAGS =		-Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 DEPSFLAGS =		-MMD -MP
 RM =			rm -rf
 AR =			ar rcs

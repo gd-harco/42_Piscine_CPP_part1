@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:25:52 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/08 16:51:09 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:44:05 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ Character &Character::operator=(const Character &obj) {
 		this->_inventory[i] = obj._inventory[i]->clone();
 	}
 	this->_name = obj._name;
+	return *this;
 }
 
 void Character::setEmptyInventory() {
@@ -62,19 +63,33 @@ void Character::emptyInventory() {
 void Character::equip(AMateria *m) {
 	int	i=0;
 
-	while (this->_inventory[i])
+	while (i < 4 && this->_inventory[i])
 		i++;
-	this->_inventory[i] = m;
+	if (i == 4)
+		std::cout << this->_name + " inventory is full" << std::endl;
+	else{
+		this->_inventory[i] = m;
+		m->set_m_equiped_location(this->_inventory[i]);
+	}
 }
 
 void Character::unequip(int idx) {
-	if (idx < 0 || idx > 4 || !this->_inventory[idx])
-		std::cout << "No materia equipped at slot " << idx << std::endl;
-	else
-
-
+	int place = idx - 1;
+	if (place < 0 || place > 3  || !this->_inventory[place])
+		std::cout << "No materia equipped at slot " << place << std::endl;
+	else{
+		for (int i = place; i < 3 && this->_inventory[i]; i++)
+			this->_inventory[i] = this->_inventory[i + 1];
+		if (this->_inventory[3])
+			this->_inventory[3] = NULL;
+		//TODO: handle the unequiped materia
+	}
 }
 
-void Character::use(int idx, ICharacter &target) {
-
+std::string const &Character::getName() const {
+	return this->_name;
 }
+
+//void Character::use(int idx, ICharacter &target) {
+//
+//}
