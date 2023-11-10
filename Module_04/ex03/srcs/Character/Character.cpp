@@ -63,7 +63,17 @@ void Character::emptyInventory() {
 
 void Character::equip(AMateria *m) {
 	int	i=0;
+	LMateria	*list = g_List;
 
+	while (list){
+		if (list->current == m)
+			break ;
+		list = list->next;
+	}
+	if (!list){
+		std::cout << "Materia alrady equiped elsewhere" << std::endl;
+		return;
+	}
 	while (i < 4 && this->_inventory[i]) {
 		if (this->_inventory[i] == m) {
 			std::cout << "Materia already equiped" << std::endl;
