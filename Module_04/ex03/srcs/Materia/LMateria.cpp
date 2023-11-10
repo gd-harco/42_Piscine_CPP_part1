@@ -6,13 +6,16 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:41:58 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/09 16:19:00 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/10 13:01:13 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
-#include "header.hpp"
+#include "LMateria.hpp"
 
+extern LMateria *g_List;
+
+//do not use if Materia not asllocated on the heap
 LMateria	*newLMateria(AMateria *content) {
 	LMateria	*newLMateria = new LMateria;
 	newLMateria->current = content;
@@ -20,32 +23,45 @@ LMateria	*newLMateria(AMateria *content) {
 	return newLMateria;
 }
 
-void	LMateriaAddBack(LMateria **list, LMateria *toAdd) {
+void	LMateriaAddBack(AMateria *toAdd) {
 	LMateria	*current;
-
-	if (!list)
+	LMateria	*LtoAdd = newLMateria(toAdd);
+	if (!g_List)
 		return;
-	current = *list;
+	current = g_List;
 	while (current && current->next)
 		current = current->next;
-	current->next = toAdd;
+	if (current->current == NULL) {
+		delete current;
+		g_List = LtoAdd;
+	}
+	else
+		current->next = LtoAdd;
 }
 
-void	LMateriaRemove(LMateria **list, AMateria *toRemove) {
-	LMateria	*current = *list;
+void	LMateriaRemove(AMateria *toRemove) {
+	LMateria	*current = g_List;
+	LMateria	*previous = NULL;
+	LMateria	*next = NULL;
 
-	while (current && current->current != toRemove)
+	while (current && current->current != toRemove) {
+		previous = current;
 		current = current->next;
+	}
 	if (!current){
 		std::cout << "Materia not in the list" << std::endl;
 		return;
 	}
-	delete current->current;
-	current = current->next;
+	next = current->next;
+	delete current;
+	if (!previous)
+		g_List = next;
+	else
+		previous->next = next;
 }
 
-void LMateriaFree(LMateria **list){
-	LMateria	*current = *list;
+void LMateriaFree(){
+	LMateria	*current = g_List;
 	LMateria	*next = current->next;
 
 	while (next) {

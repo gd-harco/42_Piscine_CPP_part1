@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:01:33 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/09 11:07:38 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:49:26 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "ICharacter.hpp"
 #include <iostream>
 #include "AMateria.hpp"
+#include "LMateria.hpp"
+
 
 class Character : public ICharacter {
 	public:

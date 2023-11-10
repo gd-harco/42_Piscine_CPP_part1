@@ -6,7 +6,7 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 20:23:57 by gd-harco          #+#    #+#              #
-#    Updated: 2023/11/09 15:57:51 by gd-harco         ###   ########.fr        #
+#    Updated: 2023/11/10 11:03:14 by gd-harco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,14 +29,14 @@ DIR_INCS =	incs/			\
 INCLUDES =\
 	$(addprefix -I , $(DIR_INCS))
 
-DIR_BUILD =		.build/
-OBJS =			$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
-DEPS =			$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
-CPPFLAGS =		-Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
-DEPSFLAGS =		-MMD -MP
-RM =			rm -rf
-AR =			ar rcs
-CXX=c++
+DIR_BUILD	=	.build/
+OBJS		=	$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
+DEPS		=	$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
+DEPSFLAGS	=	-MMD -MP
+RM			=	rm -rf
+AR			=	ar rcs
+CXX			=	g++
 
 .PHONY:		all
 all:
