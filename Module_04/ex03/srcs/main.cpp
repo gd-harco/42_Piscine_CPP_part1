@@ -6,25 +6,27 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 17:15:11 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/09 11:16:22 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:20:09 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.hpp"
 
 int main(void) {
-	Character	Cloud("Cloud");
-	AMateria	*MateriaList[5];
+	Character	*Cloud = new Character("Cloud");
+	LMateria	*List;
 
-	MateriaList[0] = new Ice;
-	MateriaList[1] = new Cure;
-	MateriaList[2] = new Ice;
-	MateriaList[3] = new Cure;
-	MateriaList[4] = new Cure;
+	List = new LMateria;
 
-	for (int i=0; i<5; i++)
-		Cloud.equip(MateriaList[i]);
+	Ice		iceSword;
+	Cure	healStick;
+	Ice		iceGauntlet;
 
-	for (int i=0; i < 5; i++)
-		delete MateriaList[i];
+	LMateriaAddBack(&List, newLMateria(&iceSword));
+	LMateriaAddBack(&List, newLMateria(&healStick));
+	LMateriaAddBack(&List, newLMateria(&iceGauntlet));
+	Cloud->equip(&healStick);
+	LMateriaRemove(&List, &healStick);
+	LMateriaFree(&List);
+	delete Cloud;
 }

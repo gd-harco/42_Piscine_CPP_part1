@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 10:25:32 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/08 15:39:44 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:25:56 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,15 @@
 #include "Cure.hpp"
 #include "ICharacter.hpp"
 #include "Character.hpp"
+
+struct LMateria {
+	AMateria		*current;
+	struct LMateria	*next;
+};
+
+LMateria	*newLMateria(AMateria *content);
+void		LMateriaAddBack(LMateria **list, LMateria *toAdd);
+void		LMateriaRemove(LMateria **list, AMateria *toRemove);
+void		LMateriaFree(LMateria **list);
 
 #endif //HEADER_HPP

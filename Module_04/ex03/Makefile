@@ -6,7 +6,7 @@
 #    By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 20:23:57 by gd-harco          #+#    #+#              #
-#    Updated: 2023/11/09 11:19:48 by gd-harco         ###   ########.fr        #
+#    Updated: 2023/11/09 15:57:51 by gd-harco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC =	main.cpp					\
 		Materia/AMateria.cpp		\
 		Materia/Ice.cpp				\
 		Materia/Cure.cpp			\
+		Materia/LMateria.cpp		\
 		Character/Character.cpp
 
 DIR_INCS =	incs/			\
