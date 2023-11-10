@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:25:52 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/11/09 11:44:05 by gd-harco         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:11:14 by gd-harco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,8 @@ void Character::equip(AMateria *m) {
 		i++;
 	if (i == 4)
 		std::cout << this->_name + " inventory is full" << std::endl;
-	else{
+	else
 		this->_inventory[i] = m;
-		m->set_m_equiped_location(this->_inventory[i]);
-	}
 }
 
 void Character::unequip(int idx) {
