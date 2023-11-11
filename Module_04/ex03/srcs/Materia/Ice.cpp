@@ -14,22 +14,22 @@
 
 Ice::Ice()
 		: AMateria("ice") {
-	std::cout << "Ice : Default Constructor Called" << std::endl;
+	std::cerr << "Ice : Default Constructor Called" << std::endl;
 }
 
 Ice::Ice(Ice const &obj)
 		: AMateria(obj) {
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cerr << "Copy Constructor Called" << std::endl;
 	if (this != &obj)
 		*this = obj;
 }
 
 Ice::~Ice() {
-	std::cout << "Ice : Destructor Called" << std::endl;
+	std::cerr << "Ice : Destructor Called" << std::endl;
 }
 
 Ice	&Ice::operator= (const Ice &obj) {
-	std::cout << "Copy Assignment Operator Called" << std::endl;
+	std::cerr << "Copy Assignment Operator Called" << std::endl;
 	if (this != &obj) {
 		this->m_type = obj.m_type;
 	}

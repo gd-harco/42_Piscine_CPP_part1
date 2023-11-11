@@ -26,7 +26,7 @@ AMateria::AMateria(const std::string &type)
 }
 
 AMateria::AMateria(AMateria const &obj) {
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cerr << "Copy Constructor Called" << std::endl;
 	if (this != &obj)
 		*this = obj;
 	LMateriaAddBack(this);
@@ -37,7 +37,7 @@ AMateria::~AMateria() {
 }
 
 AMateria	&AMateria::operator= (const AMateria &obj) {
-	std::cout << "Copy Assignment Operator Called" << std::endl;
+	std::cerr << "Copy Assignment Operator Called" << std::endl;
 	if (this != &obj)
 		this->m_type = obj.m_type;
 	return (*this);

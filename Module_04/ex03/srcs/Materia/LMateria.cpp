@@ -24,11 +24,10 @@ LMateria	*newLMateria(AMateria *content) {
 }
 
 void	LMateriaAddBack(AMateria *toAdd) {
-	LMateria	*current;
-	LMateria	*LtoAdd = newLMateria(toAdd);
 	if (!g_List)
 		return;
-	current = g_List;
+	LMateria	*current = g_List;
+	LMateria	*LtoAdd = newLMateria(toAdd);
 	while (current && current->next)
 		current = current->next;
 	if (current->current == NULL) {

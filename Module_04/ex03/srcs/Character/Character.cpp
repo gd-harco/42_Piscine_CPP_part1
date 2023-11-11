@@ -17,8 +17,8 @@ extern LMateria	*g_List;
 
 Character::Character()
 		: _name("undefinedCharacter"){
-
-	std::cout << "Character : Default Constructor Called" << std::endl;
+	setEmptyInventory();
+	std::cerr << "Character : Default Constructor Called" << std::endl;
 }
 
 Character::Character(const std::string &name)
