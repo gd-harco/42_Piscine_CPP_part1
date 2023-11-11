@@ -20,6 +20,7 @@ SRC =	main.cpp					\
 		Materia/Ice.cpp				\
 		Materia/Cure.cpp			\
 		Materia/LMateria.cpp		\
+		Materia/MateriaSource.cpp	\
 		Character/Character.cpp
 
 DIR_INCS =	incs/			\
