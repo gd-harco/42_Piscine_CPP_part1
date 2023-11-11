@@ -108,6 +108,10 @@ std::string const &Character::getName() const {
 	return this->_name;
 }
 
+AMateria *Character::getInventory(int idx) const {
+	return this->_inventory[idx];
+}
+
 //void Character::use(int idx, ICharacter &target) {
 //
 //}

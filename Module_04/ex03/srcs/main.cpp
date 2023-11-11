@@ -36,8 +36,9 @@ int main(void) {
 	Cloud->equip(healthPotion);
 	Aerith->equip(iceArrow);
 	Aerith->equip(chocobo);
-	Aerith->equip(iceSword);
+	Aerith->equip(Cloud->getInventory(1)->clone());
 	Aerith->unequip(1);
+	Aerith->equip(iceArrow);
 	Aerith->unequip(2);
 	Aerith->unequip(3);
 	LMateriaFree();

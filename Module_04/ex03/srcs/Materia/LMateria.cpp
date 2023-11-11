@@ -24,13 +24,15 @@ LMateria	*newLMateria(AMateria *content) {
 }
 
 void	LMateriaAddBack(AMateria *toAdd) {
-	if (!g_List)
-		return;
 	LMateria	*current = g_List;
 	LMateria	*LtoAdd = newLMateria(toAdd);
+	if (!current) {
+		g_List = LtoAdd;
+		return;
+	}
 	while (current && current->next)
 		current = current->next;
-	if (current->current == NULL) {
+	if (!current || current->current == NULL) {
 		delete current;
 		g_List = LtoAdd;
 	}

@@ -32,6 +32,7 @@ class Character : public ICharacter {
 		void		equip(AMateria* m);
 		void		unequip(int idx);
 		std::string	const & getName() const;
+		AMateria	*getInventory(int idx) const;
 	private:
 		Character();
 		std::string	_name;
