@@ -12,6 +12,8 @@
 
 #include "Ice.hpp"
 
+#include <ICharacter.hpp>
+
 Ice::Ice()
 		: AMateria("ice") {
 	std::cerr << "Ice : Default Constructor Called" << std::endl;
@@ -41,6 +43,5 @@ Ice	*Ice::clone() const {
 }
 
 void	Ice::use(ICharacter &target) {
-	std::cout << "* shoots an ice bolt at <name> *";
-	(void)target;
+	std::cout << "* shoots an ice bolt at " + target.getName() + " *" << std::endl;
 }

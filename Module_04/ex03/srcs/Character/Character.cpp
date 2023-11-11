@@ -56,8 +56,9 @@ void Character::setEmptyInventory() {
 }
 
 void Character::emptyInventory() {
-	for (int i=0; i < 4 && this->_inventory[i]; i++) {
-		delete this->_inventory[i];
+	for (int i=0; i < 4; i++) {
+		if (this->_inventory[i])
+			delete this->_inventory[i];
 	}
 }
 
@@ -95,7 +96,7 @@ void Character::equip(AMateria *m) {
 }
 
 void Character::unequip(int idx) {
-	int place = idx - 1;
+	int const place = idx - 1;
 	if (place < 0 || place > 3  || !this->_inventory[place])
 		std::cout << "No materia equipped at slot " << place << std::endl;
 	else{
@@ -112,6 +113,12 @@ AMateria *Character::getInventory(int idx) const {
 	return this->_inventory[idx];
 }
 
-//void Character::use(int idx, ICharacter &target) {
-//
-//}
+void Character::use(int idx, ICharacter &target) {
+	if (idx <= 0 || idx > 4 || !this->_inventory[idx - 1]) {
+		std::cout << "No materia equipped at slot " << idx << std::endl;
+		return;
+	}
+	else
+	std::cout << this->getName() + " ";
+	this->_inventory[idx - 1]->use(target);
+}

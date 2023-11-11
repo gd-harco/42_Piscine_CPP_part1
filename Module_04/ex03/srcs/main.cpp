@@ -27,18 +27,18 @@ int main(void) {
 	AMateria	*healStick = new Cure();
 	AMateria	*iceGauntlet = new Ice();
 	AMateria	*healthPotion = new Cure();
-	AMateria	*iceArrow = new Ice();
-	AMateria	*chocobo = new Cure();
+	// AMateria	*iceArrow = new Ice();
+	// AMateria	*chocobo = new Cure();
 
 	Cloud->equip(iceSword);
 	Cloud->equip(healStick);
 	Cloud->equip(iceGauntlet);
 	Cloud->equip(healthPotion);
-	Aerith->equip(iceArrow);
-	Aerith->equip(chocobo);
+	//TODO: Copy assignment operator never called, see why
+	// Aerith = Cloud;
 	Aerith->equip(Cloud->getInventory(1)->clone());
+	Aerith->use(1, *Cloud);
 	Aerith->unequip(1);
-	Aerith->equip(iceArrow);
 	Aerith->unequip(2);
 	Aerith->unequip(3);
 	LMateriaFree();
