@@ -11,21 +11,25 @@
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "LMateria.hpp"
 
 AMateria::AMateria()
 		: m_type("undefined") {
-	std::cout << "AMateria : Default Constructor Called" << std::endl;
+	LMateriaAddBack(this);
+	std::cerr << "AMateria : Default Constructor Called" << std::endl;
 }
 
 AMateria::AMateria(const std::string &type)
 		: m_type(type) {
-	std::cout << "AMateria : type Constructor Called" << std::endl;
+	LMateriaAddBack(this);
+	std::cerr << "AMateria : type Constructor Called" << std::endl;
 }
 
 AMateria::AMateria(AMateria const &obj) {
 	std::cout << "Copy Constructor Called" << std::endl;
 	if (this != &obj)
 		*this = obj;
+	LMateriaAddBack(this);
 }
 
 AMateria::~AMateria() {

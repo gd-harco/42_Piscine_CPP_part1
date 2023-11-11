@@ -13,8 +13,6 @@
 #ifndef LMATERIA_HPP
 #define LMATERIA_HPP
 
-
-
 struct LMateria {
 	AMateria		*current;
 	struct LMateria	*next;

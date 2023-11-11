@@ -80,13 +80,8 @@ void Character::equip(AMateria *m) {
 			return;
 		}
 		i++;
-	}
-	if (i == 4)
-		std::cout << this->_name + " inventory is full" << std::endl;
-	else {
-		this->_inventory[i] = m;
-		LMateriaRemove(m);
-	}
+	this->_inventory[i] = m;
+	LMateriaRemove(m);
 }
 
 void Character::unequip(int idx) {
