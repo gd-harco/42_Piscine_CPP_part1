@@ -28,6 +28,7 @@ class Character : public ICharacter {
 
 		void		setEmptyInventory();
 		void		emptyInventory();
+		bool		checkAvailable(AMateria* m);
 		void		equip(AMateria* m);
 		void		unequip(int idx);
 		std::string	const & getName() const;

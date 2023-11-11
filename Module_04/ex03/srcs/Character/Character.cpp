@@ -24,7 +24,7 @@ Character::Character()
 Character::Character(const std::string &name)
 		: _name(name) {
 	setEmptyInventory();
-	std::cout << "Character : Name Constructor Called" << std::endl;
+	std::cerr << "Character : Name Constructor Called" << std::endl;
 }
 
 Character::Character(const Character &obj) {
@@ -61,9 +61,9 @@ void Character::emptyInventory() {
 	}
 }
 
-void Character::equip(AMateria *m) {
-	int	i=0;
-	LMateria	*list = g_List;
+bool Character::checkAvailable(AMateria* m) {
+	LMateria*	list = g_List;
+	int			i = 0;
 
 	while (list){
 		if (list->current == m)
@@ -72,13 +72,23 @@ void Character::equip(AMateria *m) {
 	}
 	if (!list){
 		std::cout << "Materia alrady equiped elsewhere" << std::endl;
-		return;
+		return false;
 	}
 	while (i < 4 && this->_inventory[i]) {
 		if (this->_inventory[i] == m) {
 			std::cout << "Materia already equiped" << std::endl;
-			return;
+			return false;
 		}
+		i++;
+	}
+	return true;
+}
+
+void Character::equip(AMateria *m) {
+	int i = 0;
+	if (!checkAvailable(m))
+		return;
+	while (this->_inventory[i])
 		i++;
 	this->_inventory[i] = m;
 	LMateriaRemove(m);
@@ -90,10 +100,7 @@ void Character::unequip(int idx) {
 		std::cout << "No materia equipped at slot " << place << std::endl;
 	else{
 		LMateriaAddBack(this->_inventory[place]);
-		for (int i = place; i < 3 && this->_inventory[i]; i++)
-			this->_inventory[i] = this->_inventory[i + 1];
-		if (this->_inventory[3])
-			this->_inventory[3] = NULL;
+		this->_inventory[place] = NULL;
 	}
 }
 

@@ -60,6 +60,8 @@ void	LMateriaRemove(AMateria *toRemove) {
 }
 
 void LMateriaFree(){
+	if (!g_List)
+		return;
 	LMateria	*current = g_List;
 	LMateria	*next = current->next;
 
