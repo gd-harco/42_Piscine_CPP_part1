@@ -14,7 +14,6 @@
 #define _AMateria_HPP_
 
 #include <iostream>
-
 //prototype to avoid include loop
 class	ICharacter;
 

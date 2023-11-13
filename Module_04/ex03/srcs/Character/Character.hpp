@@ -28,14 +28,17 @@ class Character : public ICharacter {
 
 		void		setEmptyInventory();
 		void		emptyInventory();
+		bool		checkAvailable(AMateria* m);
 		void		equip(AMateria* m);
 		void		unequip(int idx);
 		std::string	const & getName() const;
+		AMateria	*getInventory(int idx) const;
+		void		use(int idx, ICharacter& target);
+
 	private:
 		Character();
 		std::string	_name;
 		AMateria	*_inventory[4];
-//		void		use(int idx, ICharacter& target) = 0;
 };
 
 

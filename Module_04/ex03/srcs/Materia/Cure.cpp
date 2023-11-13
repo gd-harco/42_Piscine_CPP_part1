@@ -12,24 +12,26 @@
 
 #include "Cure.hpp"
 
+#include <ICharacter.hpp>
+
 Cure::Cure()
 		: AMateria("cure") {
-	std::cout << "Cure : Default Constructor Called" << std::endl;
+	std::cerr << "Cure : Default Constructor Called" << std::endl;
 }
 
 Cure::Cure(Cure const &obj)
 		: AMateria(obj) {
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cerr << "Copy Constructor Called" << std::endl;
 	if (this != &obj)
 		*this = obj;
 }
 
 Cure::~Cure() {
-	std::cout << "Cure : Destructor Called" << std::endl;
+	std::cerr << "Cure : Destructor Called" << std::endl;
 }
 
 Cure	&Cure::operator= (const Cure &obj) {
-	std::cout << "Copy Assignment Operator Called" << std::endl;
+	std::cerr << "Copy Assignment Operator Called" << std::endl;
 	if (this != &obj) {
 		this->m_type = obj.m_type;
 	}
@@ -41,6 +43,5 @@ Cure	*Cure::clone() const {
 }
 
 void	Cure::use(ICharacter &target) {
-	std::cout << "* heals <name>’s wounds *";
-	(void)target;
+	std::cout << "* heals " + target.getName() + "'s wounds *" << std::endl;
 }

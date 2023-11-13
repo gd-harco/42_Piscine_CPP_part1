@@ -12,24 +12,26 @@
 
 #include "Ice.hpp"
 
+#include <ICharacter.hpp>
+
 Ice::Ice()
 		: AMateria("ice") {
-	std::cout << "Ice : Default Constructor Called" << std::endl;
+	std::cerr << "Ice : Default Constructor Called" << std::endl;
 }
 
 Ice::Ice(Ice const &obj)
 		: AMateria(obj) {
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cerr << "Copy Constructor Called" << std::endl;
 	if (this != &obj)
 		*this = obj;
 }
 
 Ice::~Ice() {
-	std::cout << "Ice : Destructor Called" << std::endl;
+	std::cerr << "Ice : Destructor Called" << std::endl;
 }
 
 Ice	&Ice::operator= (const Ice &obj) {
-	std::cout << "Copy Assignment Operator Called" << std::endl;
+	std::cerr << "Copy Assignment Operator Called" << std::endl;
 	if (this != &obj) {
 		this->m_type = obj.m_type;
 	}
@@ -41,6 +43,5 @@ Ice	*Ice::clone() const {
 }
 
 void	Ice::use(ICharacter &target) {
-	std::cout << "* shoots an ice bolt at <name> *";
-	(void)target;
+	std::cout << "* shoots an ice bolt at " + target.getName() + " *" << std::endl;
 }

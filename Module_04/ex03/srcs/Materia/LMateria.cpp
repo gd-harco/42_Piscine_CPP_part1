@@ -24,14 +24,15 @@ LMateria	*newLMateria(AMateria *content) {
 }
 
 void	LMateriaAddBack(AMateria *toAdd) {
-	LMateria	*current;
+	LMateria	*current = g_List;
 	LMateria	*LtoAdd = newLMateria(toAdd);
-	if (!g_List)
+	if (!current) {
+		g_List = LtoAdd;
 		return;
-	current = g_List;
+	}
 	while (current && current->next)
 		current = current->next;
-	if (current->current == NULL) {
+	if (!current || current->current == NULL) {
 		delete current;
 		g_List = LtoAdd;
 	}
@@ -61,6 +62,8 @@ void	LMateriaRemove(AMateria *toRemove) {
 }
 
 void LMateriaFree(){
+	if (!g_List)
+		return;
 	LMateria	*current = g_List;
 	LMateria	*next = current->next;
 

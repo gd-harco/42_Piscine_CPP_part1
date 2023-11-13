@@ -14,6 +14,8 @@
 
 LMateria	*g_List;
 
+//Never alocate Materias on the stack, it will cause a crash when freeing the list.
+
 int main(void) {
 	Character	*Cloud = new Character("Cloud");
 	Character	*Aerith = new Character("Aerith");
@@ -21,18 +23,25 @@ int main(void) {
 	g_List->current = NULL;
 	g_List->next = NULL;
 
-	Ice		*iceSword = new Ice();
-	Cure	*healStick = new Cure();
-	Ice		*iceGauntlet = new Ice();
+	AMateria	*iceSword = new Ice();
+	AMateria	*healStick = new Cure();
+	AMateria	*iceGauntlet = new Ice();
+	AMateria	*healthPotion = new Cure();
+	// AMateria	*iceArrow = new Ice();
+	// AMateria	*chocobo = new Cure();
 
-
-	LMateriaAddBack(iceSword);
-	LMateriaAddBack(healStick);
-	LMateriaAddBack(iceGauntlet);
 	Cloud->equip(iceSword);
-	Cloud->equip(iceSword);
-	Aerith->equip(healStick);
 	Cloud->equip(healStick);
+	Cloud->equip(iceGauntlet);
+	Cloud->equip(healthPotion);
+	//TODO: Copy assignment operator never called, see why
+	// Aerith = Cloud;
+	Aerith->equip(Cloud->getInventory(1)->clone());
+	Aerith->use(1, *Cloud);
+	Aerith->unequip(1);
+	Aerith->unequip(2);
+	Aerith->unequip(3);
 	LMateriaFree();
 	delete Cloud;
+	delete Aerith;
 }
