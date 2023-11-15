@@ -32,14 +32,14 @@ DIR_INCS =	incs/ \
 INCLUDES =\
 	$(addprefix -I , $(DIR_INCS))
 
-DIR_BUILD =		.build/
-OBJS =			$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
-DEPS =			$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
-CPPFLAGS =		-Wall -Wextra -Werror -std=c++98 -g3
-DEPSFLAGS =		-MMD -MP
-RM =			rm -rf
-AR =			ar rcs
-CXX=c++
+DIR_BUILD	=	.build/
+OBJS		=	$(patsubst %.cpp, $(DIR_BUILD)%.o, $(SRC))
+DEPS		=	$(patsubst %.cpp, $(DIR_BUILD)%.d, $(SRC))
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
+DEPSFLAGS	=	-MMD -MP
+RM			=	rm -rf
+AR			=	ar rcs
+CXX			=	c++
 
 .PHONY:		all
 all:

@@ -26,13 +26,13 @@ int main(void) {
 	delete j;
 	delete meta;
 
-	const WrongAnimal* wrongMeta = new WrongAnimal();
+	const WrongAnimal* wrongPtr;
 	const WrongCat* wrongI = new WrongCat();
+	wrongPtr = wrongI;
 	std::cout << wrongI->getType() << " " << std::endl;
-	std::cout << wrongMeta->getType() << " " << std::endl;
+	std::cout << wrongPtr->getType() << " " << std::endl;
 	wrongI->makeSound();
-	wrongMeta->makeSound();
+	wrongPtr->makeSound();
 	delete wrongI;
-	delete wrongMeta;
 	return 0;
 }
